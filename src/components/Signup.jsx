@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
+import React,{useState} from 'react';
 const SignUp = () => {
+// hooks
+const [username,setusername]=useState("")
+const [email,SetEmail]=useState("")
+const [password,SetPassword]=useState("")
+const [phone,SetPhone]=useState("")
+
     return (
-    
-        <div className="d-flex justify-content-center row text-center" >
-            <div className="card shadow col-md-6" >
+        <div className="d-flex justify-content-center row text-center " >
+            <div className="card shadow col-md-6 mt-4" >
                 <form action="" className="card-body">
                     <h1>Sign In</h1>
                     <input type="text" placeholder="Enter your username" className="form-control"
