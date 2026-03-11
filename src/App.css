@@ -1,6 +1,7 @@
 /* write your own properties*/
 h1{
-    color: blue;
-    background-color:black;
-    padding: 15px;
+    color: rgb(255, 208, 0);
+    background-color:rgb(228, 103, 103);
+    padding: 10px;
 }
+
