@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 const SignUp = () => {
-// hooks
-const [username,setusername]=useState("")
-const [email,SetEmail]=useState("")
-const [password,SetPassword]=useState("")
-const [phone,SetPhone]=useState("")
+    // hooks
+    const [username, setusername] = useState("")
+    const [email, SetEmail] = useState("")
+    const [password, SetPassword] = useState("")
+    const [phone, SetPhone] = useState("")
 
     return (
         <div className="d-flex justify-content-center row text-center " >
@@ -13,24 +13,27 @@ const [phone,SetPhone]=useState("")
                 <form action="" className="card-body">
                     <h1>Sign In</h1>
                     <input type="text" placeholder="Enter your username" className="form-control"
-                        required />
+                        required value={username} onChange={(e) => setusername(e.target.value)} />
                     <br /><br />
+
                     <input type="email" placeholder="Enter your email" className="form-control"
-                        required />
+                        required value={email} onChange={(e) => SetEmail(e.target.value)} />
                     <br /><br />
                     <input type="password" placeholder="Enter your password"
                         className="form-control"
-                        required />
+                        required value={password} onChange={(e) => SetPassword(e.target.value)} />
                     <br /><br />
+
                     <input type="text" placeholder="Enter your phone number" className="form-control"
-                        required />
+                        required value={phone} onChange={(e) => SetPhone(e.target.value)} />
                     <br /><br />
-                    &nbsp;
-                        <button type="submit" className="btn btn-primary">Sign Up</button>
+
+
+                    <button type="submit" className="btn btn-primary">Sign Up</button>
                     <p className='text-center'>
-                    Already have an account?&nbsp; &nbsp;<Link to='/signin'>sign in</Link></p>
+                        Already have an account?&nbsp; &nbsp;<Link to='/signin'>sign in</Link></p>
                 </form>
-                
+
             </div>
         </div>
     )
