@@ -13,8 +13,11 @@ const SignIn = () => {
                     <br /><br />
                     {username}
                     <input type="text" placeholder="Password" className="form-control" required value={password} onChange={(e) => SetPassword(e.target.value)} />
+                    {password}
+                    <br /> <br />
                     <button type="submit" className="btn btn-primary">Sign In</button>
-                    <p className='text-center'>Don't have an account<Link to='/signin'>sign in</Link></p>
+                    <p>Don't have an account?</p>
+                    <Link to='/signin'>sign in</Link>
                 </form>
             </div>
         </div>
