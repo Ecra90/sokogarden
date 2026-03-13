@@ -6,7 +6,35 @@ const SignUp = () => {
     const [email, SetEmail] = useState("")
     const [password, SetPassword] = useState("")
     const [phone, SetPhone] = useState("")
-
+    const[loading,setLoading]=useState("")
+    const[success,setSuccess]=useState("")
+    const[error,setError]=useState("")
+    const submit=async(e)=>{
+        e.preventDefault()
+        setLoading("Please wait as we load your data")
+        try{
+            const data=new FormData()
+            data.append('username',username)
+            data.append('email',email)
+            data.append('password',password)
+            data.append('phone',phone)
+            const response=await fetch("http://ecraswala.alwaysdata.net/api/signup",{
+                method:"POST",
+                body:data
+            })
+            const result=await response.json()
+            if(result.error){
+                setError(result.error)
+                setLoading("")
+            }else{
+                setSuccess("Account created successfully")
+                setLoading("")
+            }
+        }catch(error){
+            setError("An error occurred while creating the account")
+            setLoading("")
+        }
+    }
     return (
         <div className="d-flex justify-content-center row text-center " >
             <div className="card shadow col-md-6 mt-4" >
