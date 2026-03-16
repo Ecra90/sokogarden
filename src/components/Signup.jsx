@@ -59,13 +59,10 @@ const SignUp = () => {
                         required value={phone} onChange={(e) => SetPhone(e.target.value)} />
                     <br /><br />
                     {phone}
-
-
                     <button type="submit" className="btn btn-primary">Sign Up</button>
                     <p className='text-center'>
                         Already have an account?&nbsp; &nbsp;<Link to='/signin'>sign in</Link></p>
                 </form>
-
             </div>
         </div>
     )

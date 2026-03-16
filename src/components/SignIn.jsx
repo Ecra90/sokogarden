@@ -49,11 +49,11 @@ const SignIn = () => {
                     <h1>Sign In</h1>
                     <input type="text" placeholder="Enter your username" className="form-control"
                         required value={username} onChange={(e) => setusername(e.target.value)} />
-                    <br /><br />
+                    <br />
                     {username}
                     <input type="text" placeholder="Password" className="form-control" required value={password} onChange={(e) => SetPassword(e.target.value)} />
                     {password}
-                    <br /> <br />
+                    <br />
                     <button type="submit" className="btn btn-primary">Sign In</button>
                     <p>Don't have an account?</p>
                     <Link to='/signin'>sign in</Link>
