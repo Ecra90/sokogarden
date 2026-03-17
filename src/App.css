@@ -3,9 +3,16 @@ h1{
     color: rgb(255, 208, 0);
     background-color:rgb(228, 103, 103);
     padding: 10px;
+    text-decoration: double;
+    text-transform: capitalize;
+    text-overflow: clip;
+    text-shadow: none;
 }
 div{
 background-color: rgb(140, 170, 160);
 color: beige;
 background-image:url(../yoghurt.jpg);
+text-emphasis: none;
+text-decoration: underline;
 }
+
