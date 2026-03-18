@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // useEffect==used to run side effects
 // to avoid refreshing the browser manually
 // puting empty dependencies===when we always need a new category to make sure it runs once
 const GetProducts = () => {
-    const [products, setProducts] = useState("")
+    const [products, setProducts] = useState([])
     const [error, setError] = useState("")
     const [loading, setLoading] = useState("")
+    const navigate=useNavigate()//navigation from one component to another
     // path for our image
     const img_url = "https://malombeswala.alwaysdata.net/static/images/"
     const getproducts = async () => {
@@ -32,19 +34,23 @@ const GetProducts = () => {
             <h1 className="text-center"><b>Available products here</b></h1>
             {loading}
             {error}
-            {products.map((product) => (
-
-                <div className="col-md-3 text-center mb-4">
-                    {/*card with dummy data*/}
-                    <div className="card shadow">
-                        <img src={img_url + product.product_photo} alt="" className="product_img mt-4" />
-                        <h5 className="mt-2">Heading</h5>
-                        <p className="text-muted">Description</p>
-                        <b className="text-warning">cost KES</b>
-                        <button className="text-light btn-btn-light w-100 mt-2 bg-dark h-400" >Purchase now</button>
+           {products.map((product) => (
+            <div className="col-md-3 justify-content-center mb-4">
+                {/* Card with equal size */}
+                <div className="card shadow card-margin">
+                        <img 
+                            className=" product_img mt-4"
+                            src={img_url + product.product_photo} 
+                        />
+                    <div className="card-body">
+                        <h5 className="mt-2">{product.product_name}</h5>
+                        <p className="text-muted">{product.product_description}</p>
+                        <b className="text-warning">{product.product_cost} KES</b>  <br />
+                        <button className="btn btn-dark mt-2 w-100" onClick={()=>navigate('/MpesaPayment',{state:{product}})}>Purchase Now</button>
                     </div>
                 </div>
-            ))}
+            </div>
+        ))}
         </div>
     )
 }
