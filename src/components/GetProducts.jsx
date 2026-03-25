@@ -10,12 +10,12 @@ const GetProducts = () => {
     const [loading, setLoading] = useState("")
     const navigate=useNavigate()//navigation from one component to another
     // path for our image
-    const img_url = "https://malombeswala.alwaysdata.net/static/images/"
+    const img_url = "https://ecraswala.alwaysdata.net/static/images/"
     const getproducts = async () => {
         setLoading("please wait.....")
         try {
             // connect to backend api
-            const response = await axios.get("https://malombeswala.alwaysdata.net/api/get_product_details")
+            const response = await axios.get("https://ecraswala.alwaysdata.net/api/get_product_details")
             // update the products hook with the data from the api
             setProducts(response.data)
             // after getting the response reset the loading hook

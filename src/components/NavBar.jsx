@@ -8,7 +8,7 @@ const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
             <div className="container">
-                <NavLink to="/" className="navbar-brand fw-bold text-success display-5">
+                <NavLink to="/" className="navbar-brand fw-bold text-info display-5">
                     SokoGarden
                 </NavLink>
 
@@ -42,8 +42,8 @@ const NavBar = () => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/AddProducts" className={linkClass}>
-                                Add Products
+                            <NavLink to="/addproduct" className={linkClass}>
+                                Add Product
                             </NavLink>
                         </li>
 

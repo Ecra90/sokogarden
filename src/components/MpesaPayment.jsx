@@ -8,7 +8,7 @@ const MpesaPayment = () => {
     const [phone, SetPhone] = useState("")
     const {product}=useLocation().state || {}
     console.log("response",product)
-    const img_url = "https://malombeswala.alwaysdata.net/static/images/"
+    const img_url = "https://ecraswala.alwaysdata.net/static/images/"
     const submit= async(e)=>{
         e.preventDefault()
         setMessage("Please wait....")
